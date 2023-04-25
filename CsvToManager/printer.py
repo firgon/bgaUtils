@@ -1,9 +1,9 @@
+from utils import Utils
 from .dataHandler import ObjectList, Field
-import Utils
 
 
-class PhpCreator:
-    export_folder = "exports/"
+class Printer:
+    export_folder = Utils.EXPORT_FOLDER
     templates_folder = "templates/"
     manager_file = templates_folder + "manager.php"
     model_file = templates_folder + "model.php"
@@ -60,10 +60,12 @@ class PhpCreator:
             f.write(text)
 
         #     MAKE CSS
-        css_file = self.export_folder + "to_copy.css"
-        text = self.make_css(object_list, model)
-        with open(css_file, 'w') as f:
-            f.write(text)
+        if object_list.css_ok:
+            print('Je prépare le CSS ' + object_list.css_ok)
+            css_file = self.export_folder + "to_copy.css"
+            text = self.make_css(object_list, model)
+            with open(css_file, 'w') as f:
+                f.write(text)
             
         #     MAKE .JS
         js_file = self.export_folder + model + ".js"
@@ -224,12 +226,12 @@ class PhpCreator:
             text = reader.read()
 
         text = text.replace("{STRUCTURE}",
-                            self.get_structure(object_list.fieldnames,
+                            self.get_structure(object_list.get_fieldnames_for_php(),
                                                False))\
             .replace('{MODEL}', model.upper())\
             .replace('{CONSTANTS}', self.print_constants(object_list))\
             .replace('{DATA}', self.get_data(object_list.objects,
-                                             object_list.fieldnames,
+                                             object_list.get_fieldnames_for_php(),
                                              False))
         return text
 

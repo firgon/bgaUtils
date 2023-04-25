@@ -1,7 +1,7 @@
 import re
 from dataclasses import dataclass
 
-import Utils
+import utils.Utils as utils
 
 
 @dataclass
@@ -28,9 +28,9 @@ class Field:
         'state' => ['biome_state', 'int'], if type == int or list
         """
         if self.type == int:
-            return f"['{Utils.snake_case(self.name)}', 'int']"
+            return f"['{utils.snake_case(self.name)}', 'int']"
         if self.type == list:
-            return f"['{Utils.snake_case(self.name)}', 'obj']"
+            return f"['{utils.snake_case(self.name)}', 'obj']"
         if self.type == str:
             return f"'{self.name}'"
 
@@ -48,15 +48,21 @@ class Field:
 
 class ObjectList:
     OCCURRENCES = "occurrences"
-    ID = "data_id"
+    ID = "id"
     index = 1
     automatic_ID = False
 
-    def __init__(self, data_id_needed: bool, fieldtypes: list[Field] = None):
+    def __init__(self, fieldtypes: list[Field] = None):
         # add ID field if there is no in fieldtypes
         # (and prepare to add to objects)
         self.fieldnames = [field.name for field in fieldtypes
                            if field.name != self.OCCURRENCES]
+
+        self.css_ok = all([x in self.fieldnames for x in ['css_file', 'css_x', 'css_y']])
+        if self.css_ok:
+            print('Tout semble ok pour gérer le css')
+        else:
+            print('Pas de CSS')
 
         if self.ID not in self.fieldnames:
             fieldtypes.append(Field(self.ID, int))
@@ -104,7 +110,7 @@ class ObjectList:
 
         self.constants = dict()
         for word in all_recurrent_words:
-            self.constants[word] = Utils.str_to_constant(word)
+            self.constants[word] = utils.str_to_constant(word)
 
         self.apply_constants()
 
@@ -144,7 +150,7 @@ class ObjectList:
         if fieldtype is None:
             if value.isnumeric():
                 fieldtype = int
-            elif Utils.detect_array(value):
+            elif utils.detect_array(value):
                 fieldtype = list
             else:
                 fieldtype = str
@@ -154,14 +160,14 @@ class ObjectList:
             return value
 
         if fieldtype == str:
-            return Utils.make_str(value)
+            return utils.make_str(value)
 
         if fieldtype == list:
-            if not Utils.detect_array(value):
-                return self.quote_value(Utils.make_array(value))
+            if not utils.detect_array(value):
+                return self.quote_value(utils.make_array(value))
             else:
                 value = value[1:-1]
-                return Utils.make_array(
+                return utils.make_array(
                     ", ".join(map(self.quote_value, value.split(','))))
 
         else:  # should be int
@@ -178,7 +184,7 @@ class ObjectList:
 
     def get_fieldnames_for_php(self):
         return list([field for field in self.fieldnames
-                     if not field.startswith('css')])
+                     if not field.startswith('css') and (field != self.ID and field != self.OCCURRENCES)])
 
     def get_fieldtypes_for_css(self):
         return list([field for field in self.fieldtypes if field.is_css()])

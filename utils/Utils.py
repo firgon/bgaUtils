@@ -1,4 +1,41 @@
+import os
 from re import sub
+from tkinter import filedialog
+
+EXPORT_FOLDER = "exports/"
+
+
+def choose_file(title: str = "Choisissez un fichier", filetypes: tuple | list = ()) -> str:
+    """
+    @param filetypes: should be a tuple or a list of tuple
+    """
+    if isinstance(filetypes, tuple):
+        filetypes = [filetypes]
+    elif isinstance(filetypes, list):
+        if any(not isinstance(item, tuple) for item in filetypes):
+            raise TypeError("Filetypes doit être une liste de tuple (ou un seul tuple)")
+    return filedialog.askopenfilename(title=title,
+                                      filetypes=filetypes)
+
+
+def file_to_name(file_name: str) -> str:
+    """return the name of a file without .csv or .php"""
+    basename = os.path.basename(file_name)
+    return basename[:basename.rfind(".")]
+
+
+def make_replacements(text: str, replacements: list) -> str:
+    """ Receive a str and a list of list and makes replacements
+    @param text: text to parse
+    @param replacements: like ["{str_to_replace}", "new string"]
+    """
+    for replacement in replacements:
+        if not isinstance(replacement, list) and len(replacement) == 2 \
+                and isinstance(replacement[0], str) and isinstance(replacement[1], str):
+            raise ValueError("Le format de vos chaines de remplacements n'est pas bon")
+        text = text.replace(replacement[0], replacement[1])
+
+    return text
 
 
 def str_to_constant(word) -> str:

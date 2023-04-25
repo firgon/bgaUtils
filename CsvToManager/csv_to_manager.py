@@ -1,16 +1,15 @@
 from tkinter import filedialog
 from csv import DictReader
 import os
-import Utils
-from .printer import PhpCreator
+import utils.Utils as Utils
+from .printer import Printer
 from .dataHandler import ObjectList, Field
 
 
 class CSVToManager:
 
     def __init__(self):
-        choice = filedialog.askopenfilename(title="Choisissez un fichier csv",
-                                            filetypes=[("CSV files", "*.csv")])
+        choice = Utils.choose_file(title="Choisissez un fichier csv", filetypes=["CSV files", "*.csv"]);
 
         if choice == '':
             exit()
@@ -21,6 +20,8 @@ class CSVToManager:
             fieldnames = reader.fieldnames
 
             rows = [row for row in reader]
+
+            # Determine type of each field
             for field in fieldnames:
                 # if one of the value is array, the field is list
                 if any([Utils.detect_array(row[field]) for row in rows]):
@@ -39,9 +40,9 @@ class CSVToManager:
                     fieldtypes.append(Field(field, str))
                     print(f"{field} est de type str")
 
-            data_id_needed = input("Data-id est-il nécessaire ? (y/n)") == "y"
+            # data_id_needed = input("Data-id est-il nécessaire ? (y/n)") == "y"
 
-            self.objects = ObjectList(data_id_needed, fieldtypes)
+            self.objects = ObjectList(fieldtypes)
 
             for row in rows:
                 nb = 1
@@ -58,7 +59,7 @@ class CSVToManager:
 
             print("nom de fichier à  lire", model)
 
-            PhpCreator(self.objects, model=model)
+            Printer(self.objects, model=model)
 
 
 if __name__ == "__main__":
