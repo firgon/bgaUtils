@@ -9,7 +9,7 @@ from .dataHandler import ObjectList, Field
 class CSVToManager:
 
     def __init__(self):
-        choice = Utils.choose_file(title="Choisissez un fichier csv", filetypes=["CSV files", "*.csv"]);
+        choice = Utils.choose_file(title="Choisissez un fichier csv", filetypes=[("CSV files", "*.csv")])
 
         if choice == '':
             exit()

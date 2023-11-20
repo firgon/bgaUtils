@@ -2,19 +2,25 @@ from tkinter import Tk
 
 
 class Printer:
-    def __init__(self, variable):
-        self.result = f"{variable} = {{ \n"
+    def __init__(self, variable, index):
+        self.result = f"{variable} = [ \n"
+        self.index = int(index)
 
     def new_record(self, x, y, width=None, height=None):
-        new_variable = self.dialog.get_label("Quel est le nom de cette valeur ? ")
         if width is None or height is None:
-            self.result += f"   {new_variable} : [{x}, {y}],"
+            self.result += f"{self.index} => [\n" \
+                           f"   'coord' => [{x:.2f}, {y:.2f}],\n" \
+                           f"   'type' => CITY,\n" \
+                           f"   'paths' => [],\n" \
+                           f"],\n"
         else:
-            self.result += f"   {new_variable} : " \
-                           f"[{x:.0f}, {y:.0f}, {width:.0f}, {height:.0f}],\n"
+            self.result += f"   {self.index} => [\n" \
+                           f"   'coord' => [{x:.0f}, {y:.0f}, {width:.0f}, {height:.0f}],\n" \
+                           f"],\n"
+        self.index += 1
 
     def finish(self):
-        self.result += '\n}'
+        self.result += '\n]'
         print(self.result)
 
 

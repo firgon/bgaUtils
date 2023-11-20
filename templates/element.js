@@ -1,4 +1,4 @@
-let f = (data) => {
+let $f = (data) => {
   return {
     {STRUCTURE}
   };

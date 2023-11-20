@@ -16,9 +16,10 @@ def run():
         variable = inputs.get_label(
             "Vous allez donc enregistrer vos résultats dans une variable. Comment voulez-vous la nommer ?"
         )
+        index = inputs.get_label("Commencer par quel indice ?")
         if variable == "":
             exit()
-        printer = Printer(variable)
+        printer = Printer(variable, index)
 
     is_rect_record = inputs.get_yes_or_no("Voulez vous enregistrer des rectangles complets ?")
     is_absolute = inputs.get_yes_or_no("Voulez vous enregistrer des valeurs absolues en px ?")

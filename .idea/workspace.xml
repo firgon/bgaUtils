@@ -4,26 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58f069da-f58c-4b83-9ad8-ef2e4c2e38bb" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CoordCreator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PhpJsTranslator/PhpToJs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PhpJsTranslator/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StatesCreator/States.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+    <list default="true" id="58f069da-f58c-4b83-9ad8-ef2e4c2e38bb" name="Changes" comment="initial new files">
+      <change afterPath="$PROJECT_DIR$/csvSpreading/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/csvSpreading/csv_spreading.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/csvSpreading/printer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/card_model.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordCreator/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/CoordCreator/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CoordCreator/printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/CoordCreator/printer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CsvToManager/csv_to_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/CsvToManager/csv_to_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CsvToManager/dataHandler.py" beforeDir="false" afterPath="$PROJECT_DIR$/CsvToManager/dataHandler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CsvToManager/printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/CsvToManager/printer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatesCreator/form.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatesCreator/form.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/StatesCreator/statesCreator.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatesCreator/statesCreator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/Utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exports/Card.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exports/Cards.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/exports/card.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exports/card.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exports/cards.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/exports/to_copy.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exports/cells_data.inc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exports/cells_data.inc.php.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/element.js" beforeDir="false" afterPath="$PROJECT_DIR$/templates/element.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/Utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +53,14 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/profils/Manu/Documents/Python/CoordCreator&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/profils/Manu/Documents/Python/bgaUtils/csvSpreading&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\profils\Manu\Documents\Python\bgaUtils\csvSpreading" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\profils\Manu\Documents\Python\bgaUtils" />
       <recent name="D:\profils\Manu\Documents\Python\bgaUtils\Utils" />
@@ -109,11 +110,27 @@
       <option name="project" value="LOCAL" />
       <updated>1678378891916</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="phptojs translator">
+      <created>1682438227392</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682438227392</updated>
+    </task>
+    <task id="LOCAL-00003" summary="initial new files">
+      <created>1682438251591</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1682438251591</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit" />
+    <MESSAGE value="phptojs translator" />
+    <MESSAGE value="initial new files" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial new files" />
   </component>
 </project>
