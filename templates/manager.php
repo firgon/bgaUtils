@@ -39,7 +39,7 @@ class {MODEL}s extends \{TRIGRAMME}\Helpers\Pieces
         //   }
         //   $age = $id < 140 ? 1 : 2;
 
-        //   ${MODEL_LOWER}[] = [
+        //   ${MODEL_LOWER}s[] = [
         //     'data_id' => $id,
         //     'location' => 'deckAge' . $age,
         //   ];
