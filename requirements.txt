@@ -1,2 +1,4 @@
 matplotlib
 pillow
+openpyxl
+pandas

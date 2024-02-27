@@ -123,3 +123,22 @@ def _make(value: str, start: str, end: str):
 def invitePlayers():
     url = "https://boardgamearena.com/community/community/inviteGroup.html?id=14792051&player=83977641"
     players = ['farfrench', 83977641]
+
+
+def promptChoice(message, choices):
+    possibleChoices = []
+
+    for index, item in enumerate(choices):
+        displayableValue = item[0] if isinstance(item, (list, tuple)) else item
+        print(f"{index}: {displayableValue}")
+        possibleChoices.append(index)
+
+    try:
+        choice = int(input(message))
+    except ValueError:
+        exit()
+
+    if choice in possibleChoices:
+        return choices[choice][1] if isinstance(choices[choice], (list, tuple)) else choices[choice]
+    else:
+        exit()

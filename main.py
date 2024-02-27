@@ -3,29 +3,28 @@ from StatesCreator.statesCreator import StatesCreator
 from CoordCreator import main
 from PhpJsTranslator import PhpToJs
 from csvSpreading.csv_spreading import CSVSpreading
+from createDataFromXlsx import main as xlsx
+from utils.Utils import promptChoice
+from csvDataUpdate import csv_spreading as cs
 
 APPLI_NAME = 0
 APPLI = 1
 
 utils = (
     ("csv_to_manager", CSVToManager),
-    ("statesCreator", StatesCreator),
+    # ("statesCreator", StatesCreator),
     ("CoordCreator", main.run),
     ("PhpToJs", PhpToJs.php_to_js),
-    ("CSV_Spreading", CSVSpreading)
+    ("CSV_Spreading", CSVSpreading),
+    # ("createDataFromXlsx", xlsx.run),
+    ("csvDataUpdate", cs.CSVSpreading)
 )
-possibleChoices = []
 
-for index, util in enumerate(utils):
-    print(f"{index}: {util[0]}")
-    possibleChoices.append(index)
+choice = promptChoice('Quel utilitaire voulez-vous lancer ?', utils)
+choice()
 
-try:
-    choice = int(input('Quel utilitaire voulez-vous lancer ?'))
-except ValueError:
-    exit()
 
-if choice in possibleChoices:
-    utils[choice][APPLI]()
+
+
 
 
