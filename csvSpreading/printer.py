@@ -24,22 +24,22 @@ class Printer:
         for key in self.keys:
             if key.endswith('_SC'):
                 text = text.replace('{' + key + '}', Utils.snake_case(new_text[key.replace('_SC', '')]))
-            if key.endswith('_CC'):
+            elif key.endswith('_CC'):
                 text = text.replace('{' + key + '}', Utils.camel_case(new_text[key.replace('_CC', '')]))
-            if key.endswith('_PC'):
+            elif key.endswith('_PC'):
                 text = text.replace('{' + key + '}', Utils.pascal_case(new_text[key.replace('_PC', '')]))
             else:
                 text = text.replace('{' + key + '}', new_text[key])
         return text
 
     def export(self, row: dict):
-        if 'path' in row:
-            path = self.export_folder + row['path'] + "/"
+        if 'PATH' in row:
+            path = self.export_folder + row['PATH'] + "/"
         else:
             path = self.export_folder
 
-        # title = Utils.pascal_case(row['NAME']) + self.extension
-        title = row['NAME'] + self.extension
+        title = Utils.pascal_case(row['FILENAME']) + self.extension
+        # title = row['NAME'] + self.extension
 
         if not os.path.exists(path):
             os.makedirs(path)

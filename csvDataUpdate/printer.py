@@ -42,7 +42,7 @@ class Printer:
             '''
         },
         {
-            'name': "ADD Forest Shuffle cards (PHP)",
+            'name': "ADD Forest Shuffle cards EDGE (PHP)",
             'prefix': ''' ''',
             'data': '''{ID} => $f([{TYPE}, [{SPECIES}], [{TREE_SYMBOL}, EDGE_DECK]),
                 ''',
@@ -50,9 +50,9 @@ class Printer:
                 '''
         },
         {
-            'name': "ADD Forest Shuffle cards (JS)",
+            'name': "ADD Forest Shuffle cards EDGE (JS)",
             'prefix': ''' ''',
-            'data': '''{ID} : $f([{TYPE}, [{SPECIES}], [{TREE_SYMBOL}, EDGE_DECK]),
+            'data': '''{ID} : $f([{TYPE}, [{SPECIES}], [{TREE_SYMBOL}], EDGE_DECK]),
                 ''',
             'suffix': '''
                 '''
@@ -61,8 +61,8 @@ class Printer:
             'name': "ADD Forest Shuffle Species (JS)",
             'prefix': ''' ''',
             'data': '''
-            {NAME} : {
-                name: "{NAME}",
+            {NAME_PC} : {
+                name: "{LATIN_NAME}",
                 nb: {NB},
                 tags: [{TAGS}],
                 cost: {COST},
@@ -72,6 +72,15 @@ class Printer:
                 points: "{POINTS}",
             },
             
+            ''',
+            'suffix': '''
+                '''
+
+        },
+        {
+            'name': "ADD const",
+            'prefix': ''' ''',
+            'data': '''const {CONST} = "{NAME}";
             ''',
             'suffix': '''
                 '''

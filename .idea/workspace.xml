@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58f069da-f58c-4b83-9ad8-ef2e4c2e38bb" name="Changes" comment="typo">
-      <change afterPath="$PROJECT_DIR$/createDataFromXlsx/Data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createDataFromXlsx/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/createDataFromXlsx/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvDataUpdate/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvDataUpdate/csv_spreading.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/csvDataUpdate/printer.py" afterDir="false" />
+    <list default="true" id="58f069da-f58c-4b83-9ad8-ef2e4c2e38bb" name="Changes" comment="csv spreading">
+      <change afterPath="$PROJECT_DIR$/templates/specie.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CsvToManager/csv_to_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/CsvToManager/csv_to_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/Utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csvDataUpdate/printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/csvDataUpdate/printer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/csvSpreading/printer.py" beforeDir="false" afterPath="$PROJECT_DIR$/csvSpreading/printer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +40,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/profils/Manu/Documents/Python/bgaUtils&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/profils/Manu/Documents/Python/bgaUtils/main.py&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.documentation.PythonDocumentationConfigurable&quot;
   }
 }</component>
@@ -70,11 +63,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CoordCreator" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CoordCreator/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -133,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700489322410</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="csv spreading">
+      <created>1709034833907</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709034833907</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -142,6 +142,7 @@
     <MESSAGE value="initial new files" />
     <MESSAGE value="multiapp" />
     <MESSAGE value="typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="typo" />
+    <MESSAGE value="csv spreading" />
+    <option name="LAST_COMMIT_MESSAGE" value="csv spreading" />
   </component>
 </project>
