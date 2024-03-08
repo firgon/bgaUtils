@@ -44,7 +44,7 @@ class Printer:
         {
             'name': "ADD Forest Shuffle cards EDGE (PHP)",
             'prefix': ''' ''',
-            'data': '''{ID} => $f([{TYPE}, [{SPECIES}], [{TREE_SYMBOL}, EDGE_DECK]),
+            'data': '''{ID} => $f([{TYPE}, [{SPECIES}], [{TREE_SYMBOL}], EDGE_DECK]),
                 ''',
             'suffix': '''
                 '''
